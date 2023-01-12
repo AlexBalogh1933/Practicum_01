@@ -7,9 +7,11 @@ import java.util.Scanner;
  *
  * @author Alex Balogh
  */
-public class PersonGenerator {
+public class PersonGenerator
+{
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException
+    {
 
         Scanner in = new Scanner(System.in);
         String idString;
