@@ -1,3 +1,5 @@
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,7 +9,7 @@ import java.util.Scanner;
  */
 public class PersonGenerator {
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws IOException {
 
         Scanner in = new Scanner(System.in);
         String idString;
@@ -40,5 +42,16 @@ public class PersonGenerator {
             System.out.println(doContinue);
 
         } while (doContinue);
+
+        String fileName;
+        fileName = SafeInput.getNonZeroLenString(in, "What do you want the file to be called");
+        FileWriter writer = new FileWriter(fileName + ".txt");
+
+        for (String i : PersonList)
+        {
+            writer.write(i);
+            writer.write("\n");
+        }
+        writer.close();
     }
 }
